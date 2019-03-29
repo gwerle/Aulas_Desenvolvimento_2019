@@ -6,4 +6,8 @@
 }
 #background-image {
   background-image: url(http://bgrepeat.com/128/128-164.jpg);
+  opacity: 0.8;
+}
+.opacidade1 {
+  opacity: 1;
 }

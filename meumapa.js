@@ -40,6 +40,11 @@ transparent: "true",
 format: "image/png"
 })//.addTo(mapa);
 
+var popup = L.popup()
+.setLatLng([-25.44, -49.51])
+.setContent('Eu sou uma popup!')
+.openOn(mapa);
+
 
 var pontos = L.layerGroup([ponto1, ponto2]);
 var linhas = L.layerGroup([linha1, linha2]);

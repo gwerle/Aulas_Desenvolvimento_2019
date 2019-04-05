@@ -1,6 +1,6 @@
 window.onload = function() {
 var mapa = L.map('meumapa').setView([-25.45, -49.27], 12)
-var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mapa);
+var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 var mapbox = L.tileLayer(
   'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}',
   {
@@ -59,9 +59,13 @@ var baseCartografica = {
 var informacaoTematica = {
 "Desenhos": desenhos,
 "Geoserver": mun
-
 }
+
 //Adicionar objetos ao controle de camadas
 L.control.layers(baseCartografica, informacaoTematica).addTo(mapa);
 L.control.scale({position: 'bottomleft', imperial: 'false'}).addTo(mapa);
+
+var osmVisaoGeral = new L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+new L.Control.MiniMap(osmVisaoGeral).addTo(mapa);
+
 }
